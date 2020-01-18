@@ -45,6 +45,13 @@
 <main role="main" class="container">
     <div class="row">
         <div class="col-md-8">
+            {% if massages %}
+                {% for massage in massages %}
+                    <div class="alert alert-{{ massage.tag }}">
+                        {{ massage }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             {% block content %}{% endblock %}
         </div>
         <div class="col-md-4">
